@@ -12,7 +12,6 @@ class WebDown(object):
     classdocs
     '''
 
-
     def __init__(self, address=None):
         '''
         Constructor
@@ -20,10 +19,12 @@ class WebDown(object):
         self.downLoadaddress = address
         self.htmlbody = None
         
-    def getParsingRootOfTree(self, address):       
+    def getParsingRootOfTree(self, address=None):       
         try:
+            if address == None : address = self.downLoadaddress
             htmlsource = urllib2.urlopen(address).read()
-            return BeautifulSoup(htmlsource, "html.parser")
+            self.htmlbody = BeautifulSoup(htmlsource, "html.parser")
+            return self.htmlbody
         except:
             return None
         

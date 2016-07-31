@@ -5,26 +5,26 @@ Created on 2016. 7. 24.
 
 @author: sunkist
 '''
-from ClassMainAddress import ClassAddress as ca
+from ClassMainAddress import *
 from WebDocuDownload import WebDown as wd
 from USCParsing import ClassParsing as cp
 
-ad = ca().cpcMainAddress()
+ad = cpcMainAddress()
 soup = wd().getParsingRootOfTree(ad)
 
-
+#usc test codes
 """
-ad = ca().uscMainAddress()
+ad = uscMainAddress()
 soup = wd().getParsingRootOfTree(ad)
 mainNumList, mainTitleList = cp().getMainTitle(soup)
 
 for pair in mainNumList:
     print pair
-    ad = ca().uscSubAddress(pair)
+    ad = uscSubAddress(pair)
     soup = wd().getParsingRootOfTree(ad)
     subNumList, subTitleList = cp().getSubTitle(soup)
     descList = []
-    ad = ca().uscDescriptionAddress(pair)
+    ad = uscDescriptionAddress(pair)
     print ad
     soup = wd().getParsingRootOfTree(ad)
     for num in subNumList:   
