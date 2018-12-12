@@ -12,11 +12,12 @@ class WebDown(object):
     classdocs
     '''
 
-    def __init__(self, address=None):
+    def __init__(self, address=None, proxy=None,):
         '''
         Constructor
         '''
         self.downLoadaddress = address
+        self.proxy = proxy
         self.htmlbody = None
         
     def getParsingRootOfTree(self, address=None):       

@@ -5,12 +5,23 @@ Created on 2016. 7. 24.
 
 @author: sunkist
 '''
-from ClassMainAddress import *
-from WebDocuDownload import WebDown as wd
-from USCParsing import ClassParsing as cp
+#from ClassMainAddress import *
+#from WebDocuDownload import WebDown as wd
+#from USCParsing import ClassParsing as cp
+import re
 
+t=b'abc\\\\\\\\\\nc de\n'
+#t='abc\\\\nc de\n'
+print(t.decode('ascii'))
+pattern = r'\\+n|\t|\s'
+print(re.split(pattern, t.decode('ascii')))
+
+
+'''
 ad = cpcMainAddress()
 soup = wd().getParsingRootOfTree(ad)
+'''
+
 
 #usc test codes
 """
